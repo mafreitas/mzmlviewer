@@ -1,0 +1,15 @@
+name: base
+channels:
+  - conda-forge
+  - bioconda
+  - default
+dependencies:
+  - python
+  - pip
+  - pip:
+    - streamlit
+    - matplotlib
+    - scipy
+    - numpy
+    - pandas
+    - pyopenms
