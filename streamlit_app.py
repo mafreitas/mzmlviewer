@@ -9,12 +9,11 @@ uploaded_file = st.file_uploader("Choose a file")
 #@st.cache(show_spinner=False,hash_funcs={pyopenms_4.MSExperiment: lambda _: None})
 def load_data(uploaded_file):
   
-  filename=os.path.join("tmp",uploaded_file.name)
-  with open(filename,"wb") as f: 
+  with open(uploaded_file.name,"wb") as f: 
     f.write(uploaded_file.getbuffer())
 
   exp = MSExperiment()
-  MzMLFile().load(filename, exp)
+  MzMLFile().load(uploaded_file.name, exp)
   return exp
 
 if uploaded_file is not None:
