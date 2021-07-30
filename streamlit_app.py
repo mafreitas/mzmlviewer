@@ -6,7 +6,7 @@ from pyopenms import *
 
 uploaded_file = st.file_uploader("Choose a file")
 
-@st.cache(show_spinner=False,hash_funcs={pyopenms_4.MSExperiment: lambda _: None})
+#@st.cache(show_spinner=False,hash_funcs={pyopenms_4.MSExperiment: lambda _: None})
 def load_data(uploaded_file):
   
   filename=os.path.join("tmp",uploaded_file.name)
@@ -20,7 +20,7 @@ def load_data(uploaded_file):
 if uploaded_file is not None:
     exp = load_data(uploaded_file)
 
-@st.cache (show_spinner=False,hash_funcs={pyopenms_4.MSExperiment: lambda _: None})
+#@st.cache (show_spinner=False,hash_funcs={pyopenms_4.MSExperiment: lambda _: None})
 def get_tic(exp,level):
   
   retention_times = []
